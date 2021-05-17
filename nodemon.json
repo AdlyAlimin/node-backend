@@ -1,0 +1,3 @@
+{
+	"ignore": ["session/whatsapp-session*.json", "session/whatsapp-sessions.json"]
+}

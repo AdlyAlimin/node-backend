@@ -1,0 +1,3 @@
+session/whatsapp-*.json
+node_modules/
+.env
