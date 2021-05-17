@@ -54,7 +54,7 @@ const createSession = async function(id, sessions){
         conn.loadAuthInfo(SESSION_FILE_PATH)
     }
 
-    conn.on ('credentials-updated', () => {
+    conn.on ('open', () => {
         console.log (`credentials updatesss!`)
         const authInfo = conn.base64EncodedAuthInfo()
         fs.writeFileSync(SESSION_FILE_PATH, JSON.stringify(authInfo, null, '\t'))
@@ -98,11 +98,6 @@ const createSession = async function(id, sessions){
             counter += 1
         }
         //console.log(qr);
-    })
-
-    conn.on('connecting', () => {
-        // save credentials whenever updated
-        console.log ("connection bro")
     })
 
     conn.on('connection-phone-change', () => {
